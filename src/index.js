@@ -1,8 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-var HelloWorld = React.createClass({
+
+var Hello = React.createClass({
   render: function() {
-    return <div>Hello World!</div>;
+    return (<span>Hello</span>);
   }
 });
-ReactDOM.render(<HelloWorld/>, document.querySelector('#root'));
+
+var World = React.createClass({
+  render: function() {
+    return (<span>World</span>);
+  }
+});
+
+var HelloWorld = React.createClass({
+  render: function() {
+    return (
+      <div><Hello/> <World/>!</div>
+    );
+  }
+});
+
+ReactDOM.render(
+  <HelloWorld />,
+  document.getElementById('root')
+);
